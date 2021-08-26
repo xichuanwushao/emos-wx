@@ -7,16 +7,17 @@
 	// 		}
 	// 	}
 	//     ,
-		{
-            "path" : "pages/index/demo/demo",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+		// {
+  //           "path" : "pages/index/demo/demo",
+  //           "style" :                                                                                    
+  //           {
+  //               "navigationBarTitleText": "",
+  //               "enablePullDownRefresh": false
+  //           }
             
-        }
-        ,{
+  //       }
+  //       ,
+		{
             "path" : "pages/login/login",
             "style" :                                                                                    
             {
