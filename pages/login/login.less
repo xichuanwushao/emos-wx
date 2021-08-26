@@ -1,21 +1,44 @@
 @import url("../../style.less");
 .logo{
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	margin-top: 30%;
+	width: 70%;//图片宽度
+	margin-left: auto;  //左边空白 则居中 一起用
+	margin-right: auto; //左边空白 则居中 一起用
+	display: block; //模式模式是块模式 一起用
+	margin-top: 30%;  //距离上面
 }
 .logo-title{
-	font-size: 48rpx;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 8%;
-	color: @font-color;
+	font-size: 48rpx;//字体大小
+	font-weight: bold;//字体加粗
+	text-align: center;//字体居中
+	margin-top: 8%;//距离上面
+	color: @font-color;//字体颜色  style.less定义了
 }
 .logo-subtitle{
-	font-size: 34rpx;
-	text-align: center;
-	color: @font-color;
-	margin-top: 20rpx;
+	font-size: 34rpx;//字体大小
+	text-align: center;//字体居中
+	color: @font-color;//字体颜色 style.less定义了
+	margin-top: 20rpx;//字体距离上面
 }
+
+.login-btn{
+	width: 60%;//字体宽度
+	position: absolute;//绝度定位 一起用
+	bottom: 20%;//距离底部20% 一起用
+	left: 20%;//距离左侧 20%
+	background-color: @background-color;//背景颜色 style.less定义了
+	color: #fff;//文字颜色
+	box-sizing: border-box;//给按钮加边框线 按钮大小不变
+	&:active{//触发伪类时变色 点击按钮变色 &当前控件
+		background-color: @background-color-active;//背景颜色 style.less定义了
+	}
+}
+.register-container{
+	position: absolute;//绝对定位 一起用
+	bottom: 50rpx;//绝对定位 一起用 距离底部50
+	width: 100%;//加入绝对定位 宽度为内容宽度 而不是页面宽度 这里强制和页面一样宽
+	text-align: center;
+	font-size: 30rpx;//文字大小
+	color: @font-color;//文字颜色  style.less定义了
+	.register{//链接文字样式 点击颜色有变化 变成背景色
+		color: @background-color;
+}}
