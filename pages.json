@@ -17,8 +17,18 @@
             
   //       }
   //       ,
+		// {
+  //           "path" : "pages/login/login",
+  //           "style" :                                                                                    
+  //           {
+  //               "navigationBarTitleText": "",
+  //               "enablePullDownRefresh": false
+  //           }
+            
+  //       }
+  //       ,
 		{
-            "path" : "pages/login/login",
+            "path" : "pages/register/register",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
