@@ -24,8 +24,19 @@
 			    uni.login({
 			       provider:"weixin",
 			       success:function(resp){
-			          console.log(resp.code)
-			       }
+			          console.log("用户临时授权字符串 "+resp.code)
+					  let code = resp.code;
+					  uni.getUserInfo({
+					  	provider:"weixin",
+						//console.log("获取用户账户基本信息 ")
+						success:function(resp){//回调函数
+							let nickName = resp.userInfo.nickName;//用户昵称
+							let avatarUrl = resp.userInfo.avatarUrl;//用户头像地址
+							console.log("用户昵称 ",nickName);
+							console.log("用户头像地址 ",avatarUrl);
+						}
+					  })
+				   }
 			    })
 			}
 		}
