@@ -33,8 +33,9 @@
 						icon: 'none',
 						title: '邀请码不能为空'
 					});
-					//如果if语句执行了 提前结束register方法
+					//如果if语句执行了 提前结束register方法 后面方法不会执行了 验证没有通过
 					return;
+					//判断激活码是否是6位数字
 				} else if (/^[0-9]{6}$/.test(that.registerCode) == false) {
 					uni.showToast({
 						icon: 'none',
@@ -42,9 +43,12 @@
 					});
 					return;
 				}
-			register:function(){
+				//得到临时授权字符串 获取昵称和微信头像
 			    uni.login({
 			       provider:"weixin",
+					complete:function(resp){
+						console.log("网络连接失败");
+					},
 			       success:function(resp){
 			          console.log("用户临时授权字符串 "+resp.code)
 					  let code = resp.code;
@@ -56,6 +60,27 @@
 							let avatarUrl = resp.userInfo.avatarUrl;//用户头像地址
 							console.log("用户昵称 ",nickName);
 							console.log("用户头像地址 ",avatarUrl);
+							//申明变量 值是json 保存我们要上传的数据 
+							let data = {
+								code: code,//临时授权字符串
+								nickname: nickName,//昵称
+								photo: avatarUrl,//头像
+								registerCode: that.registerCode//6位数字激活码
+							};
+							//发送ajax请求 引入变量 
+							that.ajax(that.url.register, 'POST', data, function(resp) {
+								//取出权限列表
+								let permission = resp.data.permission;
+								console.log("输出权限列表 ",permission);
+								let token = resp.data.token;
+								console.log("输出令牌字符串 ",token);
+								//保存到setStorage
+								uni.setStorageSync('token', token);
+								uni.setStorageSync('permission', permission);
+								uni.switchTab({
+									url: '../index/index'
+								});
+							});
 						}
 					  })
 				   }
