@@ -16,10 +16,32 @@
 	export default {
 		data() {
 			return {
-				
+				//定不定义都可以 模型层会动态定义
+				registerCode: ''
 			}
 		},
 		methods: {
+			//输入激活码 点击注册按钮出发点击事件
+			//首先做前端验证
+			register: function() {
+				// this指代vue对象 得到vue绑定数据和方法 
+				let that = this;
+				//如果值为null  
+				if (that.registerCode == null || that.registerCode.length == 0) {
+					//弹出面包屑提示消息
+					uni.showToast({
+						icon: 'none',
+						title: '邀请码不能为空'
+					});
+					//如果if语句执行了 提前结束register方法
+					return;
+				} else if (/^[0-9]{6}$/.test(that.registerCode) == false) {
+					uni.showToast({
+						icon: 'none',
+						title: '邀请码必须是6位数字'
+					});
+					return;
+				}
 			register:function(){
 			    uni.login({
 			       provider:"weixin",
