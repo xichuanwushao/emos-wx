@@ -46,7 +46,7 @@
 				//得到临时授权字符串 获取昵称和微信头像
 			    uni.login({
 			       provider:"weixin",
-					complete:function(resp){
+					fail:function(resp){
 						console.log("网络连接失败");
 					},
 			       success:function(resp){

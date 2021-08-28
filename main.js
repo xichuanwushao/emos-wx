@@ -12,7 +12,8 @@ app.$mount()
 //封装全局变量
 let baseUrl = "http://127.0.0.1:8080/emos";
 Vue.prototype.url={
-	register:baseUrl+"/user/register"
+	register:baseUrl+"/user/register",
+	login: baseUrl + "/user/login",
 }
 //全局方法名字 ajax 
 // url 请求地址
