@@ -1,0 +1,34 @@
+@import url("../../style.less");
+.camera,.image{//取景框和图片
+	width: 100%;
+	height: 400px;
+}
+.operate-container{//2个按钮控件的样式
+	display: flex;//flex布局 2个按钮水平一行
+	justify-content: center;//两个按钮居中显示
+	margin-top: 50rpx;//上外填充
+	.btn{
+		width: 40%;//页面宽度40%
+		margin: 0;//按钮外填充
+		&:first-child{
+			margin-right: 30rpx;//第一个按钮右外填充
+		}
+	}
+}
+
+.notice-container{//按钮下方提示文字
+	padding: 40rpx 60rpx;//加上内填充 上下40 左右60
+	.notice{//标题文字
+		font-size: 40rpx;//字体大小
+		color: @font-color;//文字颜色
+		font-weight: bold;//文字加粗
+		display: block;//独占一行 block模型
+		margin-bottom: 15rpx;//下外填充15
+	}
+	.desc{
+		display: block;//普通提示文字样式
+		font-size: 32rpx;//文字大小
+		color: @desc-color;//文字颜色
+		line-height: 1.6;//行间距 行高1.6倍
+	}
+}
