@@ -1,7 +1,7 @@
 <!--文档-->
 <template>
 	<view>
-		
+		文档
 	</view>
 </template>
 

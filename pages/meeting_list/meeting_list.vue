@@ -1,7 +1,7 @@
 <!--会议列表-->
 <template>
 	<view>
-		
+		会议列表
 	</view>
 </template>
 

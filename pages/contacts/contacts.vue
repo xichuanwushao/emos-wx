@@ -1,7 +1,7 @@
 <!--通讯录-->
 <template>
 	<view>
-		
+		通讯录
 	</view>
 </template>
 
