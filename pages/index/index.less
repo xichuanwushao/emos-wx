@@ -45,3 +45,25 @@
 		width: 60rpx;//
 	}
 }
+
+.nav-container {
+	background-color: #fff;//背景色
+	margin-bottom: 20rpx;//下方外填充
+	padding: 50rpx 40rpx;//上下内填充 左右内填充
+	.nav-row {
+		display: flex;//引入flex
+		justify-content: space-between;//两端对齐
+		margin-bottom: 50rpx;//下外填充
+		.nav {
+			text-align: center;//每个链接样式 居中显示
+			.icon {
+				width: 80rpx;
+			}
+			.name {//链接里面文字样式
+				display: block;//block模型
+				font-size: 30rpx;
+				color: @font-color;//文字颜色
+			}
+		}
+	}
+}
