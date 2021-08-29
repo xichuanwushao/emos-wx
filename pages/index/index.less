@@ -1,9 +1,47 @@
+@import url('../../style.less');
 .page {
 	background-color: #eeeef4;
 }
 .swiper {
 	height: 233px;
+	image {
+		width: 100%;
+	}
 }
-.swiper.image {
-	width: 100%;
+.notify-container {
+	background-color: #fff;//背景色白色
+	padding: 25rpx;//内填充
+	position: relative;//相对定位
+	margin-bottom: 20rpx;//距离底部下外填充
+	.notify-title {
+		font-size: 34rpx;//第一行文字尺寸
+		color: @background-color;//第一行文字颜色 公共样式
+		margin-bottom: 10rpx;//第一行下外填充
+		.notify-icon {
+			width: 38rpx;//第一行图标样式
+			margin-right: 5rpx;//控件和文字水平对齐 
+			vertical-align: -8rpx;
+		}
+	}
+	.notify-content {
+		font-size: 30rpx;//文字大小
+		color: @font-color;//灰色
+		&:before {//内部伪类
+			display: inline-block;//模型 block独占一行
+			content: '';//空字符串
+			width: 12rpx;//宽度
+			height: 12rpx;//高度
+			border-radius: 6rpx;
+			background-color: red;//背景色
+			margin-left: 18rpx;//左侧外填充
+			margin-right: 15rpx;//右侧外填充
+			vertical-align: 3rpx;//控件和文字水平方向对齐
+		}
+	}
+	.more-icon {
+		position: absolute;//绝对定位
+		right: 5rpx;//距离右侧
+		top: 50rpx;//距离父控件顶部
+		width: 60rpx;//
+	}
 }

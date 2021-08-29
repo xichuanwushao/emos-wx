@@ -1,4 +1,3 @@
-<!--首页-->
 <template>
 	<view class="page">
 		<!--circular轮播 interval间隔播放时间8s 切换图片花费时间1s-->
@@ -9,6 +8,14 @@
 			<swiper-item><image mode="widthFix" src="https://emos-1304556315.cos.ap-nanjing.myqcloud.com/img/banner/swiper-4.jpg"></image></swiper-item>
 			<swiper-item><image mode="widthFix" src="https://emos-1304556315.cos.ap-nanjing.myqcloud.com/img/banner/swiper-5.jpg"></image></swiper-item>
 		</swiper>
+		<view class="notify-container" @tap="toPage('消息提醒', '/pages/message_list/message_list')">
+			<view class="notify-title"><!--widthFix 长宽比不变化-->
+				<image src="../../static/icon-1.png" mode="widthFix" class="notify-icon"></image>
+				消息提醒
+			</view>
+			<view class="notify-content">你有{{ unreadRows }}条未读消息</view>
+			<image src="../../static/icon-2.png" mode="widthFix" class="more-icon"></image>
+		</view>
 	</view>
 </template>
 
@@ -26,6 +33,6 @@
 	}
 </script>
 
-<style>
-	@import url('index.less');
+<style lang="less">
+@import url('index.less');
 </style>
