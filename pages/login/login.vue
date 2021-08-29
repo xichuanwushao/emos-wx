@@ -36,6 +36,7 @@
 							uni.setStorageSync('permission', permission);//保存权限到Storage
 							//TODO 跳转到登陆页面
 							console.log("登录成功 ")
+							//登陆成功后 跳转至首页
 							uni.switchTab({
 								url: '../index/index'
 							});

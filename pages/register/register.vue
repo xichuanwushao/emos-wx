@@ -77,6 +77,7 @@
 								//保存到setStorage
 								uni.setStorageSync('token', token);
 								uni.setStorageSync('permission', permission);
+								//登录成功后 跳转到首页
 								uni.switchTab({
 									url: '../index/index'
 								});
