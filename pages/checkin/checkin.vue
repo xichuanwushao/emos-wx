@@ -1,3 +1,4 @@
+<!--在线签到-->
 <template>
 	<view>
 		<!--device-position前置摄像头 flash关闭闪光灯 摄像头打开失败触发回调函数@error showCamera规定Camera是否显示-->
@@ -26,7 +27,32 @@
 			}
 		},
 		methods: {
-			
+			clickBtn:function(){
+				let that=this;
+				if(that.btnText=="拍照"){//判断按钮显示文字是不是拍照
+					let ctx=uni.createCameraContext();//调用微信对象
+					ctx.takePhoto({//开始拍照
+						quality:"high",//拍照质量
+						success:function(resp){//拍照成功后
+							console.log(resp.tempImagePath)//拍照图片路径
+							that.photoPath=resp.tempImagePath//保存图片路径
+							that.showCamera=false//隐藏取景框
+							that.showImage=true//显示照片
+							that.btnText="签到"//按钮文字修改为签到
+						}
+					})
+				}
+				else{//按钮上显示文字为签到时候
+
+
+				}
+			},
+			afresh:function(){//重拍按钮对于回调函数
+				let that=this;//
+				that.showCamera=true;//取景框显示出来
+				that.showImage=false;//图片隐藏起来
+				that.btnText="拍照"//按钮文字改为拍照
+			}
 		}
 	}
 </script>
