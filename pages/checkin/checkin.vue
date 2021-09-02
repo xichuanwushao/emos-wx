@@ -16,6 +16,8 @@
 </template>
 
 <script>
+	var QQMapWX=require('../../lib/qqmap-wx-jssdk.min.js');
+	var qqmapsdk;
 	export default {
 		data() {
 			return {
@@ -25,6 +27,11 @@
 				showCamera: true,//默认显示camera
 				showImage: false
 			}
+		},
+		onLoad:function(){
+			qqmapsdk=new QQMapWX({
+				key:"JIHBZ-MC56J-KVZFW-KIN5D-A3DXS-YEFVR"
+			})
 		},
 		methods: {
 			clickBtn:function(){
@@ -42,8 +49,39 @@
 						}
 					})
 				}
-				else{//按钮上显示文字为签到时候
+				else{//写签到的逻辑
+					uni.showLoading({
+						title:"签到中请稍后"
+					})
+					setTimeout(function(){
+						uni.hideLoading()//定时器 设置30秒后消失 将弹出信息隐藏
+					},3000)
 
+					uni.getLocation({
+						type:"wgs84",//属性
+						success:function(resp){
+							let latitude=resp.latitude//获取经度数据
+							let longitude=resp.longitude//获取经度数据
+							console.log("获取经度数据 "+latitude)
+							console.log("获取经度数据 "+longitude)
+							qqmapsdk.reverseGeocoder({
+								location:{
+									latitude:latitude,
+									longitude:longitude
+								},
+								success:function(resp){
+									console.log(resp.result)
+									let address=resp.result.address
+									let addressComponent=resp.result.address_component
+									let nation = addressComponent.nation;
+									let province = addressComponent.province;
+									let city = addressComponent.city;
+									let district = addressComponent.district;
+								}
+							})
+						},
+
+					})
 
 				}
 			},
