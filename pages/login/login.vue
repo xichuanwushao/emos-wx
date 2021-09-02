@@ -30,7 +30,9 @@
 					provider: 'weixin',//
 					success: function(resp) {//success回调方法
 						let code = resp.code;//从响应获取临时授权字符串
+						console.log("临时授权字符串 "+code)
 						let token = uni.getStorageSync('token');//发送ajax请求 把临时字符串传给后端
+						console.log("令牌 -token- "+ token)
 						that.ajax(that.url.login, 'POST', { code: code }, function(resp) {//全局路径 请求方式 提交数据 一个匿名函数有参数
 							let permission = resp.data.permission;//获取权限列表
 							uni.setStorageSync('permission', permission);//保存权限到Storage
