@@ -16,6 +16,7 @@ Vue.prototype.url={
 	login: baseUrl + "/user/login",
 	checkin: baseUrl + "/checkin/checkin",
 	createFaceModel: baseUrl + "/checkin/createFaceModel",
+	validCanCheckIn: baseUrl + "/checkin/validCanCheckIn",
 }
 //全局方法名字 ajax 
 // url 请求地址

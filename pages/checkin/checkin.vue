@@ -33,6 +33,21 @@
 				key:"JIHBZ-MC56J-KVZFW-KIN5D-A3DXS-YEFVR"
 			})
 		},
+		onShow:function(){
+			let that=this
+			that.ajax(that.url.validCanCheckIn,"GET",null,function(resp){
+				let msg=resp.data.msg
+				if(msg!="可以考勤"){
+					that.canCheckin=false
+					setTimeout(function(){
+						uni.showToast({
+							title:msg,
+							icon:"none"
+						})
+					},1000)
+				}
+			})
+		},
 		methods: {
 			clickBtn:function(){
 				let that=this;
