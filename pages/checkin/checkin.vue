@@ -77,6 +77,81 @@
 									let province = addressComponent.province;
 									let city = addressComponent.city;
 									let district = addressComponent.district;
+									uni.uploadFile({
+										url:that.url.checkin,
+										filePath:that.photoPath,
+										name:"photo",
+										header:{
+											token:uni.getStorageSync("token")
+										},
+										formData:{
+											address:address,
+											country:nation,
+											province:province,
+											city:city,
+											district:district
+										},
+										success:function(resp){
+											if(resp.statusCode==500&&resp.data=="不存在人脸模型"){
+												uni.hideLoading()
+												uni.showModal({
+													title:"提示信息",
+													content:"EMOS系统中不存在你的人脸识别模型，是否用当前这张照片作为人脸识别模型？",
+													success:function(res){
+														if(res.confirm){
+															console.info("成功 "+resp.data);
+
+															uni.uploadFile({
+																url:that.url.createFaceModel,
+																filePath:that.photoPath,
+																name:"photo",
+																header:{
+																	token:uni.getStorageSync("token")
+																},
+																success:function(resp){
+																	if(resp.statusCode==500){
+																		uni.showToast({
+																			title:resp.data,
+																			icon:"none"
+																		})
+																	}
+																	else if(resp.statusCode==200){
+																		uni.showToast({
+																			title:"人脸建模成功",
+																			icon:"none"
+																		})
+																	}
+																}
+															})
+														}
+													},
+													fail:function(resp){
+														console.info("失败 "+resp.data);
+													}
+												})
+											}
+											else if(resp.statusCode==200){
+												let data=JSON.parse(resp.data)
+												let code=data.code
+												let msg=data.msg
+												if(code==200){
+													uni.hideLoading()
+													uni.showToast({
+														title:"签到成功",
+														complete:function(){
+															//签到成功 跳转至其他页面
+														}
+													})
+												}
+											}
+											else if(resp.statusCode==500){
+												uni.showToast({
+													title:resp.data,
+													icon:"none"
+												})
+											}
+										}
+									})
 								}
 							})
 						},

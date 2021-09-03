@@ -14,6 +14,8 @@ let baseUrl = "http://127.0.0.1:8080/emos";
 Vue.prototype.url={
 	register:baseUrl+"/user/register",
 	login: baseUrl + "/user/login",
+	checkin: baseUrl + "/checkin/checkin",
+	createFaceModel: baseUrl + "/checkin/createFaceModel",
 }
 //全局方法名字 ajax 
 // url 请求地址
