@@ -17,8 +17,24 @@
 	export default {
 		data() {
 			return {//定义变量
-				
-				
+					name:"小灰灰",
+					photo:"",
+					deptName:"管理部",
+					address: "辽宁省大连市",
+					status: "正常",
+					risk: "中风险",
+					checkinTime: "08:25",
+					date: "2020年12月1日",
+					attendanceTime: "08:30",
+					closingTime: "17:30",
+					checkinDays: 201,
+					weekCheckin:[{type:"工作日",day:"周一",status="缺勤"}]
+					weekCheckin:[{type:"工作日",day:"周二",status="迟到"}]
+					weekCheckin:[{type:"工作日",day:"周三",status="缺勤"}]
+					weekCheckin:[{type:"工作日",day:"周四",status="正常"}]
+					weekCheckin:[{type:"工作日",day:"周五",status="正常"}]
+					weekCheckin:[{type:"休息日",day:"周六",status=""}]
+					weekCheckin:[{type:"休息日",day:"周七",status=""}]
 			}
 		},
 		methods: {
