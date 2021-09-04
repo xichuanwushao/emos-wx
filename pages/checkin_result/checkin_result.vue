@@ -17,8 +17,8 @@
 	export default {
 		data() {
 			return {//定义变量
-					name:"小灰灰",
-					photo:"",
+					name:"王府井",
+					photo:"https://thirdwx.qlogo.cn/mmopen/vi_32/mJQ68h2NfxXIm62ibSB9X8dRM8NCTZvFsW9Cv34B2pwKGJuylOn11picMDCgFsjxGiaWq71xTZia1uCfatDAWr2U5g/132",
 					deptName:"管理部",
 					address: "辽宁省大连市",
 					status: "正常",
@@ -28,13 +28,15 @@
 					attendanceTime: "08:30",
 					closingTime: "17:30",
 					checkinDays: 201,
-					weekCheckin:[{type:"工作日",day:"周一",status="缺勤"}]
-					weekCheckin:[{type:"工作日",day:"周二",status="迟到"}]
-					weekCheckin:[{type:"工作日",day:"周三",status="缺勤"}]
-					weekCheckin:[{type:"工作日",day:"周四",status="正常"}]
-					weekCheckin:[{type:"工作日",day:"周五",status="正常"}]
-					weekCheckin:[{type:"休息日",day:"周六",status=""}]
-					weekCheckin:[{type:"休息日",day:"周七",status=""}]
+					weekCheckin:[
+					{type:"工作日",day:"周一", status:"缺勤"},
+					{type:"工作日",day:"周二",status:"迟到"},
+					{type:"工作日",day:"周三",status:"缺勤"},
+					{type:"工作日",day:"周四",status:"正常"},
+					{type:"工作日",day:"周五",status:"正常"},
+					{type:"休息日",day:"周六",status:""},
+					{type:"休息日",day:"周七",status:""}
+					]
 			}
 		},
 		methods: {

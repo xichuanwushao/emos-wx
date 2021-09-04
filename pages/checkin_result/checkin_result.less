@@ -1,0 +1,51 @@
+@import url('../../style.less');
+.page{
+	background-color: #eeeef4;//定义背景色
+}
+
+.yellow{
+	background-color: #f0b52f !important;//定义3个背景色
+}
+.red{
+	background-color: #f0532f !important;//定义3个背景色
+}
+.green{
+	background-color: #52a929 !important;//定义3个背景色
+}
+.summary-container{
+	display: flex;//布局 水平排列
+	justify-content: space-between;//两端对齐
+	background-color: #fff;//白色
+	padding: 35rpx;//内填充 上下左右
+	margin-bottom: 20rpx;//第一个和第二个view之前有一个下外填充
+	.user-info{
+		display: flex;
+		.photo{
+			width: 100rpx;
+			height: 100rpx;
+			
+		}
+		.info{
+			display: flex;
+			flex-direction: column;//将排版方向由水平修改为垂直
+			justify-content: space-around;//环绕对齐
+			margin-left: 25rpx;//info和photo之前的间距 可以在photo加右外填充 也可以加左外填充在info
+			.username{
+				display: block;
+				font-size: 34rpx;
+				font-weight: bold;
+				color: @font-color;
+			}
+			.dept{
+				display: block;
+				font-size: 28rpx;
+				color: #999;
+			}
+		}
+	}
+	.date{
+		font-size: 38rpx;
+		color: @background-color;//蓝色
+	}
+}
+
