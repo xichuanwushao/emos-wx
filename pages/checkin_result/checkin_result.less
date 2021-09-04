@@ -49,3 +49,33 @@
 	}
 }
 
+.result-container {
+	display: flex;
+	background-color: #fff;
+	padding: 35rpx;
+	margin-bottom: 20rpx;
+	.left{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 330rpx;
+		margin-right: 30rpx;
+		.icon-timer{
+			width: 40rpx;
+			height: 40rpx;
+			&:first-child{
+				margin-top: 5rpx;
+			}
+		}
+		.line{
+			position: absolute;
+			height: 225rpx;
+			width: 0;
+			border-left: solid #e5e5e5 3rpx;
+			left: 20rpx;
+			top: 55rpx;
+		}
+	}
+
+}
