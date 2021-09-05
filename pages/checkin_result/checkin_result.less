@@ -119,3 +119,78 @@
 		}
 	}
 }
+.checkin-report{
+	background-color: #fff;
+	padding: 35rpx;
+	.big-icon{
+		width: 250rpx;//应为设置了 mode="widthFix" 所以图片是等比缩放 高度不用设置
+		display: block;//图片居中 所以图片左侧右侧填充相同大小的空白 1.控件必须有明确宽度 2.必须是block模型
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20rpx;
+	}
+	.report-title{
+		display: flex;
+		justify-content: center;//文字居中显示 
+		margin-top: 20rpx;//和上方图片有一个间距 上外填充20
+		.days{
+			font-size: 60rpx;
+			color: @font-color;
+		}
+		.unit{
+			margin-left: 10rpx;//和前面文字间距 1.是flex布局 
+			margin-top: 33rpx;//
+		}
+	}
+	.sub-title{
+		font-size: 34rpx;
+		color: @font-color;
+		text-align: center;//父控件要求里面子控件文字是居中的
+		margin-top: 10rpx;//上外填充
+		position: relative;//相对定位 因为子控件需要画水平的线条 是绝对定位 父控件必须要用相对定位 
+		text{
+			background-color: #fff;//背景色白色
+			z-index: 9999;//文字盖在线的上面 所以层级设置9 配置位移使用position
+			position: relative;//位移相对定位
+			padding: 0 30rpx;//左右内填充30
+		}
+		.line{
+			height: 0;//高度0
+			width: 100%;
+			border-bottom: solid #e5e5e5 2rpx;//下边框线 颜色 厚度 
+			position: absolute;//绝对定位
+			top: 25rpx;//top盖在文字上
+		}
+	}
+	.calendar-container{
+		display: flex;//水平排列
+		justify-content: space-between;//两端对齐
+		margin-top: 30rpx;//上外填充
+		.calendar{
+			text-align: center;//view标签所有子控件 文字水平居中
+			flex-grow: 0;//不要拉伸 排版flex会对控件拉伸和缩放 我不希望被拉伸
+			flex-shrink: 0;//不要缩放
+			.calendar-icon{
+				width: 70rpx;//图标大小
+				display: block;//独占一行
+				margin-bottom: 5rpx;//图标和下方文字间距
+			}
+			.day{
+				font-size: 32rpx;
+				color: @font-color;
+				display: block;//文字独占一行
+			}
+			.result{
+				display: block;//独占一行
+				font-size: 26rpx;//文字大小
+				background-color: #555;//控件背景色
+				color: #fff;//颜色
+				height: 42rpx;//高度
+				line-height: 42rpx;//文字行高 为了垂直方向居中
+				padding: 0 5rpx;//文字宽度不写死 左右内填充撑宽
+				border-radius: 8rpx;//圆角
+				margin-top: 10rpx;//上外填充
+			}
+		}
+	}
+}
