@@ -154,7 +154,9 @@
 													uni.showToast({
 														title:"签到成功",
 														complete:function(){
-															//签到成功 跳转至其他页面
+															uni.navigateTo({
+																url:"../checkin_result/checkin_result"
+															})
 														}
 													})
 												}
