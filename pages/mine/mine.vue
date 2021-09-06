@@ -20,6 +20,18 @@
 				</view>
 			</view>
 		</view>
+				<view class="list-title">用户信息栏目</view>
+				<uni-list>
+					<uni-list-item title="个人资料" link to=""></uni-list-item>
+					<uni-list-item title="我的考勤" link to="/pages/my_checkin/my_checkin"></uni-list-item>
+					<uni-list-item title="罚款记录" link to=""></uni-list-item>
+				</uni-list>
+				<view class="list-title">系统管理栏目</view>
+				<uni-list>
+					<uni-list-item title="员工管理" v-show="checkPermission(['ROOT', 'EMPLOYEE:SELECT'])" link to="../user_list/user_list"></uni-list-item>
+					<uni-list-item title="部门管理" v-show="checkPermission(['ROOT', 'DEPT:SELECT'])" link to="../dept_list/dept_list"></uni-list-item>
+					<uni-list-item title="权限管理" v-show="checkPermission(['ROOT', 'ROLE:SELECT'])" link to="../role_list/role_list"></uni-list-item>
+				</uni-list>
 	</view>
 </template>
 
