@@ -19,6 +19,7 @@ Vue.prototype.url={
 	validCanCheckIn: baseUrl + "/checkin/validCanCheckIn",
 	searchTodayCheckin: baseUrl + "/checkin/searchTodayCheckin",
 	searchUserSummary: baseUrl + "/user/searchUserSummary",
+	searchMonthCheckin: baseUrl + "/checkin/searchMonthCheckin",
 }
 //全局的权限验证函数
 Vue.prototype.checkPermission = function(perms) {
