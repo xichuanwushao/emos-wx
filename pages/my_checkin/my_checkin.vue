@@ -24,6 +24,10 @@
 				</view>
 			</view>
 		</view>
+		<view class="calendar-container"><!--insert 插入模式或弹窗模式 lunar是否显示农历 selected是否显示小圆点 -->
+			<uni-calendar :insert="true" :lunar="true" :selected="list" 
+			@monthSwitch="changeMonth" @confirm="changeMonth"></uni-calendar>
+		</view>
 	</view>
 </template>
 
