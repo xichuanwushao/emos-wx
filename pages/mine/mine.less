@@ -34,5 +34,31 @@
 			}
 		}
 	}
-
+	.summary{
+		display: flex;//布局 水平排列
+		justify-content: space-between;//内容两端对齐
+		background-color: #f5f5f5;//灰色背景
+		color: @font-color;//文字颜色
+		padding: 15rpx 0;//上下内填充15 左右不要内填充
+		view{
+			text-align: center;//文字居中对齐
+			flex-grow: 1;//缩放
+			flex-shrink: 1;//缩放
+			&:nth-child(2){//第二个控件的左边框规定一下
+				border-left: solid 1rpx #e0e0e0;//左边框线 边框线实线 宽度1 颜色
+				border-right: solid 1rpx #e0e0e0;//右边边框线 边框线实线 宽度1 颜色
+			}
+			.title{
+				display: block;
+				color: #999;
+				font-size: 28rpx;
+				margin-bottom: 10rpx;//下外填充
+			}
+			.value{
+				display: block;
+				color: @font-color;
+				font-size: 32rpx;
+			}
+		}
+	}
 }

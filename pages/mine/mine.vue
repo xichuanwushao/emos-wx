@@ -33,9 +33,9 @@
 		},
 		data() {
 			return {
-				name: '',
-				deptName: '',
-				photo: ''
+				name: '王一博',
+				deptName: '销售',
+				photo: 'https://thirdwx.qlogo.cn/mmopen/vi_32/mJQ68h2NfxXIm62ibSB9X8dRM8NCTZvFsW9Cv34B2pwKGJuylOn11picMDCgFsjxGiaWq71xTZia1uCfatDAWr2U5g/132'
 			}
 		},
 		methods: {
