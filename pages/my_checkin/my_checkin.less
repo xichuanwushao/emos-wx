@@ -1,0 +1,66 @@
+@import url('../../style.less');
+
+.green {
+    background-color: #35C895 !important;
+}
+
+.orange {
+    background-color: #EAB83E !important;
+}
+
+.red {
+    background-color: #EA643E !important;
+}
+.statistics{
+	 margin-bottom: 50rpx;
+	.big-icon{
+		width: 250rpx;//图片宽度
+		display: block;//左右外填充 控件就可以水平居中了
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 40rpx;//距离顶部 上外填充
+	}
+	.report-title{
+		display: flex;
+		justify-content: center;//居中对齐
+		margin-top: 20rpx;//上外填充
+		.days{
+			font-size: 60rpx;//文字大小
+			color: @font-color;
+		}
+		.unit{
+			margin-left: 10rpx;//左外填充
+			margin-top: 33rpx;//上外填充
+			color: @font-color;
+		}
+	}
+	.sub-title{
+		font-size: 34rpx;
+		color: @font-color;
+		text-align: center;//水平居中
+		margin-top: 10rpx;//上外填充
+	}
+	.report{
+		display: flex;//水平排列
+		justify-content: space-between;//两端对齐
+		margin-top: 30rpx;//距离顶部 上外填充
+		.column{
+			flex-grow: 1;//宽度适配
+			flex-shrink: 1;//缩小
+			color: #fff;//文字白色
+			padding-top: 20rpx;//上内填充20
+			padding-bottom: 15rpx;//下内填充15
+			.column-title{
+				display: block;//文字独占一行
+				text-align: center;//文字居中对齐
+				font-size: 30rpx;
+				margin-bottom: 5rpx;//下外填充
+			}
+			.number{
+				display: block;
+				text-align: center;
+				font-size: 30rpx;
+			}
+		}
+	}
+}

@@ -1,6 +1,29 @@
 <template>
 	<view>
-		
+		<view class="statistics">
+			<image src="../../static/big-icon-1.png" class="big-icon" mode="widthFix"></image>
+			<view class="report-title">
+				<text class="days">{{sum_1}}</text>
+				<text class="unit">天</text>
+			</view>
+			<view class="sub-title">
+				<text>本月签到</text>
+			</view>
+			<view class="report">
+				<view class="column green">
+					<text class="column-title">正常签到</text>
+					<text class="number">{{sum_1}}</text>
+				</view>
+				<view class="column orange">
+					<text class="column-title">迟到签到</text>
+					<text class="number">{{sum_2}}</text>
+				</view>
+				<view class="column red">
+					<text class="column-title">缺勤签到</text>
+					<text class="number">{{sum_3}}</text>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
