@@ -83,6 +83,12 @@
 					that.sum_2=resp.data.sum_2
 					that.sum_3=resp.data.sum_3
 				})
+			},
+			changeMonth:function(e){
+				let that=this
+				let year=e.year
+				let month=e.month
+				that.searchCheckin(that,year,month)
 			}
 		}
 	}
