@@ -1,0 +1,38 @@
+@import url('../../style.less');
+
+.page{
+	padding: 35rpx; //上下左右内填充 
+}
+.user-info{
+	margin-top: 50rpx; //上外填充
+	padding-bottom: 20rpx; //下内填充
+	.border-outer{
+		width: 320rpx;
+		height: 320rpx;
+		background-color: #fbe3e1;
+		border-radius: 160rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto; //左右外填充
+		margin-right: auto; //左右外填充
+		margin-bottom: 40rpx; //下外填充
+		.border-inner{
+			width: 280rpx;
+			height: 280rpx;
+			background-color: #f5b8b4; //背景色
+			border-radius: 140rpx; //圆角 圆角半径
+			display: flex; //图片居中 flex 子控件垂直水平居中
+			justify-content: center; //水平居中
+			align-items: center; //垂直居中 子控件在父控件垂直居中
+			.photo{
+				width: 200rpx; //宽
+				height: 200rpx; //高
+				border-radius: 120rpx; //圆角 半径120
+				display: block; //图片block模型
+				border: solid 20rpx #ec7872; //外边框 实线solid 尺寸20 颜色
+			}
+		}
+	}
+
+}

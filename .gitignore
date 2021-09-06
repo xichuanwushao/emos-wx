@@ -1,6 +1,7 @@
 node_modules/
 .project
 unpackage/
+components/
 .DS_Store
 ### IntelliJ IDEA ###
 .idea

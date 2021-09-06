@@ -19,6 +19,19 @@ Vue.prototype.url={
 	validCanCheckIn: baseUrl + "/checkin/validCanCheckIn",
 	searchTodayCheckin: baseUrl + "/checkin/searchTodayCheckin",
 }
+//全局的权限验证函数
+Vue.prototype.checkPermission = function(perms) {
+	let permission = uni.getStorageSync("permission")
+	let result = false
+	for (let one of perms) {
+		if (permission.indexOf(one) != -1) {
+			result = true
+			break
+		}
+	}
+	return result
+}
+
 //全局方法名字 ajax 
 // url 请求地址
 // method 请求方式
