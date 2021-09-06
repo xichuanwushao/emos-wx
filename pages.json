@@ -16,7 +16,7 @@
 		{
 		    "path" : "pages/checkin/checkin",
 		    "style" : {
-		        "navigationBarTitleText" : "",
+		        "navigationBarTitleText" : "在线签到",
 		        "enablePullDownRefresh" : false
 		    }
 		},
@@ -59,7 +59,7 @@
         {
             "path" : "pages/mine/mine",
             "style" : {
-                "navigationBarTitleText" : "",
+                "navigationBarTitleText" : "我的",
                 "enablePullDownRefresh" : false
             }
         },
@@ -74,6 +74,15 @@
 
         ,{
             "path" : "pages/checkin_result/checkin_result",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "签到结果",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my_checkin/my_checkin",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
