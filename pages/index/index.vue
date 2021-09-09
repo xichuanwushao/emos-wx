@@ -72,6 +72,9 @@
 				</view>
 			</view>
 		</view>
+		<uni-popup ref="popupMsg" type="top">
+			<uni-popup-message type="success" :message="'接收到' + lastRows + '条消息'" :duration="2000"/>
+		</uni-popup>
 	</view>
 </template>
 
@@ -85,17 +88,51 @@
 				uniPopup,
 				uniPopupMessage,
 				uniPopupDialog,
-				uniCalendar
 			},
 		data() {
-			return{
-				unreadRows: 0,
-				lastRows: 0,
-				timer: null,
-			}
+				return {
+					unreadRows: 0,
+					lastRows: 0,
+					timer: null,
+					calendar: [],
+					meetingPage: 1,
+					meetingLength: 20,
+					meetingList: [],
+					isMeetingLastPage: false
+				};
+			},
+		onLoad: function() {
+			let that = this;
+			uni.$on('showMessage', function() {
+				that.$refs.popupMsg.open();
+			});
+			that.ajax(that.url.refreshMessage, 'GET', null, function(resp) {
+				that.unreadRows = resp.data.unreadRows;
+				that.lastRows = resp.data.lastRows;
+				if (that.lastRows > 0) {
+					uni.$emit('showMessage');
+				}
+			});
 		},
-		onLoad() {
-
+		onUnload: function() {
+			uni.$off('showMessage');
+		},
+		onShow: function() {
+			let that = this;
+			that.timer = setInterval(function() {
+				that.ajax(that.url.refreshMessage, 'GET', null, function(resp) {
+					that.unreadRows = resp.data.unreadRows;
+					that.lastRows = resp.data.lastRows;
+					if (that.lastRows > 0) {
+						uni.$emit('showMessage');
+					}
+				});
+			}, 5000);
+			
+		},
+		onHide: function() {
+			let that = this;
+			clearInterval(that.timer);
 		},
 		methods: {
 			toPage: function(name, url) {
