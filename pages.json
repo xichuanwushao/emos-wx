@@ -100,6 +100,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/message/message",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
     "globalStyle" : {
         "navigationBarTextStyle" : "white",
