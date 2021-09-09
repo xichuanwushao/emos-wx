@@ -8,7 +8,7 @@
 			<swiper-item><image mode="widthFix" src="https://emos-1304556315.cos.ap-nanjing.myqcloud.com/img/banner/swiper-4.jpg"></image></swiper-item>
 			<swiper-item><image mode="widthFix" src="https://emos-1304556315.cos.ap-nanjing.myqcloud.com/img/banner/swiper-5.jpg"></image></swiper-item>
 		</swiper>
-		<view class="notify-container" @tap="toPage('消息提醒', '/pages/message_list/message_list')">
+		<view class="notify-container"   @tap="toPage('消息提醒', '/pages/message_list/message_list')"  >
 			<view class="notify-title"><!--widthFix 长宽比不变化-->
 				<image src="../../static/icon-1.png" mode="widthFix" class="notify-icon"></image>
 				消息提醒

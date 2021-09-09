@@ -20,6 +20,8 @@ Vue.prototype.url={
 	searchTodayCheckin: baseUrl + "/checkin/searchTodayCheckin",
 	searchUserSummary: baseUrl + "/user/searchUserSummary",
 	searchMonthCheckin: baseUrl + "/checkin/searchMonthCheckin",
+	refreshMessage: baseUrl + "/message/refreshMessage",
+	searchMessageByPage: baseUrl + "/message/searchMessageByPage",
 }
 //全局的权限验证函数
 Vue.prototype.checkPermission = function(perms) {

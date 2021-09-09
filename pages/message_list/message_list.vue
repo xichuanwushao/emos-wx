@@ -26,20 +26,60 @@
 			return {
 				page:1,
 				length:20,
-				list:[{
-					 id: "87737874656661504",
-					 refId:"89995738783813632",
-					 senderName:"系统消息",
-					 senderPhoto:"https://thirdwx.qlogo.cn/mmopen/vi_32/mJQ68h2NfxXIm62ibSB9X8dRM8NCTZvFsW9Cv34B2pwKGJuylOn11picMDCgFsjxGiaWq71xTZia1uCfatDAWr2U5g/132",
-					 msg:"HelloWorld",
-					 readFlag:false,
-					 sendTime: "2021-01-23 17:21:30"
-				}],
+				list:[
+
+				],
 				isLastPage:false
 			}
 		},
+		onShow:function(){//初始显示
+			let that=this
+			that.page=1
+			that.isLastPage=false
+			uni.pageScrollTo({
+				scrollTop:"0"
+			})
+			that.loadMessageList(that)
+		},
+		onReachBottom:function(){//下拉触底刷新
+			let that=this
+			if(that.isLastPage){
+				return
+			}
+			that.page=that.page+1
+			that.loadMessageList(that)
+		},
 		methods: {
-			
+			loadMessageList:function(ref){
+				let data={
+					page:ref.page,
+					length:ref.length
+				}
+				ref.ajax(ref.url.searchMessageByPage,"POST",data,function(resp){
+					let result=resp.data.result
+					console.info("loadMessageList resp.data "+resp.data)
+					if(result==null||result.length==0){
+						ref.isLastPage=true
+						ref.page=ref.page-1
+						uni.showToast({
+							icon:"none",
+							title:"已经到底了"
+						})
+					}
+					else{
+						if(ref.page==1){
+							ref.list=[]
+						}
+						ref.list=ref.list.concat(result)
+						if(ref.page>1){
+							uni.showToast({
+								icon:"none",
+								title:"又加载了"+result.length+"条消息"
+							})
+						}
+					}
+				})
+			}
 		}
 	}
 </script>
